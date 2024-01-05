@@ -17,9 +17,6 @@
                             <a class="nav-link  {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="live">Live</a>
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('persembahan') ? 'active' : '' }}"
@@ -35,8 +32,8 @@
                                 href="/renungan">Renungan</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/kontak">Contact</a>
+                        <li class="nav-item {{ Request::is('kontak') ? 'active' : '' }}">
+                            <a class="nav-link" href="/kontak">Kontak</a>
                         </li>
                     </ul>
                 </div>

@@ -33,7 +33,7 @@
                     Tim Penggembala
                 </a>
 
-                <a class="nav-link {{ Request::is('persembahan') ? 'active' : '' }}" href="/kelola-persembahan">
+                <a class="nav-link {{ Request::is('kelola-persembahan') ? 'active' : '' }}" href="/kelola-persembahan">
                     <div class="nav-link-icon"><i data-feather="repeat"></i></div>
                     Persembahan
                 </a>
@@ -46,6 +46,11 @@
                 <a class="nav-link {{ Request::is('info-kontak') ? 'active' : '' }}" href="/info-kontak">
                     <div class="nav-link-icon"><i data-feather="repeat"></i></div>
                     Sosmed & Kontak
+                </a>
+
+                <a class="nav-link {{ Request::is('cabang-gereja') ? 'active' : '' }}" href="/cabang-gereja">
+                    <div class="nav-link-icon"><i data-feather="repeat"></i></div>
+                    Cabang Gereja
                 </a>
                 <!-- Sidenav Heading (Addons)-->
                 <div class="sidenav-menu-heading">Plugins</div>

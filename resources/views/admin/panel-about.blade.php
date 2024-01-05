@@ -57,10 +57,20 @@
 
     @push('script')
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                iframePreview();
+            });
+
             function iframePreview() {
-                var videoUrl = document.getElementById("video-url").value
-                document.getElementById("video-preview").src = videoUrl
-                document.getElementById("video-preview").classList.remove('d-none');
+                var videoUrl = document.getElementById("video-url").value;
+                var videoPreview = document.getElementById("video-preview");
+
+                if (videoUrl.trim() !== "") {
+                    videoPreview.src = videoUrl;
+                    videoPreview.classList.remove('d-none');
+                } else {
+                    videoPreview.classList.add('d-none');
+                }
             }
         </script>
     @endpush

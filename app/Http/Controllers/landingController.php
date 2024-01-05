@@ -20,4 +20,9 @@ class landingController extends Controller
     {
         return view('landing.renungan');
     }
+
+    public function halamanKontak()
+    {
+        return view('landing.kontak');
+    }
 }

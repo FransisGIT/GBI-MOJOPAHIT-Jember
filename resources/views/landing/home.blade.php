@@ -1,68 +1,79 @@
 @extends('landing')
+
 @section('content')
     <section class="hero-section" id="section_1">
-        <div class="position-relative">
-            {{-- <img src="{{ asset('assets/festive/images/banner.png') }}" alt="" class="custom-video border-0 p-0"> --}}
 
-            <video autoplay="" loop="" class="custom-video" poster="" muted>
-                <source src="{{ asset('assets/festive/video/Fruitful-Living.mp4') }}" type="video/mp4">
-            </video>
-            {{-- <div class="row text-overlay">
+        <style>
+            .te {
+                position: absolute;
+                top: 80px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                width: 52%;
+                height: 66%;
+                margin: auto;
+                border-radius: 25px;
+                z-index: 3;
+            }
 
-                    <div class="col-12 mt-auto mb-5 text-center">
-                        <small>Festava Live Presents</small>
+            .text-live {
+                text-align: center;
+                position: absolute;
+                /* top: 80px; */
+                bottom: 400px;
+                left: 0px;
+                right: 0px;
+                width: 14%;
+                height: 0;
+                margin: auto;
+                border-radius: 25px;
+                z-index: 3;
+                color: white;
+            }
 
-                        <h1 class="text-white mb-5">Night Live 2023</h1>
+            @media (max-width:991px) {
+                .te {
+                    width: 71%;
+                    height: 49%;
+                    bottom: -54px;
+                }
 
-                        <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
-                    </div>
-
-                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
-                        <div class="date-wrap">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-clock me-2"></i>
-                                10 - 12<sup>th</sup>, Dec 2023
-                            </h5>
-                        </div>
-
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-geo-alt me-2"></i>
-                                National Center, United States
-                            </h5>
-                        </div>
-
-                        <div class="social-share">
-                            <ul class="social-icon d-flex align-items-center justify-content-center">
-                                <span class="text-white me-3">Share:</span>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-facebook"></span>
-                                    </a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-twitter"></span>
-                                    </a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-instagram"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> --}}
-        </div>
+                .text-live {
+                    width: 30%;
+                    height: 21%;
+                    bottom: 10px;
+                    text-align: center;
+                    color: white;
+                    font-size: medium;
+                }
+            }
+        </style>
+        <img src="{{ asset('assets/festive/images/banner.png') }}" alt="" class="custom-video border-0 p-0">
+        <iframe class="custom-video border-0 p-0 te" src="https://www.youtube.com/embed/2ZWsapy2cSE?si=2IzdvmEoNHzs04kd"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <h3 class="custom-video border-0 p-0 text-live">
+            Live Now
+        </h3>
+        {{-- <video autoplay loop muted class="custom-video">
+            <source src="{{ asset('assets/festive/video/Fruitful-Living.mp4') }}" type="video/mp4">
+        </video> --}}
     </section>
 
 
     <section class="about-section section-padding" id="section_2">
         <div class="space"></div>
+        {{-- <div class="text-overlay" class="custom-video">
+            <div class="d-flex align-content-center justify-content-center">
+                <iframe class="img-contain"
+                    src="https://www.youtube.com/embed/gEzyb_07fJY?si=hVLyP5sXiT1jm3CQ?t=669&autoplay=1&mute=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div> --}}
         <div class="container">
             <div class="row">
 
@@ -178,7 +189,7 @@
     <section class="schedule-section tim-penggembala" id="section_4">
         <div class="container">
             <div class="justify-content-center visi-misi">
-                <h2 class="text-white mb-4 text-center">Tim Penggembala</h2>
+                <h3 class="text-white mb-4 text-center">Tim Penggembala</h3>
                 <div id="splide" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
@@ -209,7 +220,7 @@
     <section class="pricing-section section-padding" id="section_5">
         <div class="container">
             <div class="justify-content-center">
-                <h2 class="text-white mb-4 text-center">Our Generation</h2>
+                <h3 class="text-white mb-4 text-center">Our Generation</h3>
                 <div class="row">
                     <div class="col">
                         <img src="{{ asset('assets/festive/images/logo/gps.png') }}" class="d-block w-100 person"
@@ -249,29 +260,56 @@
             <div class="overlay"></div>
             <div class="row">
                 <div class="col-lg-8 col-12 mx-auto contact-content">
-                    <h2 class="text-center mb-5 text-white">Cabang Gereja</h2>
+                    <h3 class="text-center mb-5 text-white">Cabang Gereja</h3>
                 </div>
                 <div class="col-lg-6 col-12 mb-4 mb-lg-0 order-1 contact-content">
-                    <div class="services-info">
-                        <a href="">
-                            <p class="text-white"><i class="fa-solid fa-location-dot"></i> Bondowoso</p>
-                        </a>
-                        <br>
-                        <a href="">
-                            <p class="text-white"><i class="fa-solid fa-location-dot"></i> Ranting Kasiyan</p>
-                        </a>
-                        <br>
-                        <a href="">
-                            <p class="text-white"><i class="fa-solid fa-location-dot"></i> Rambipuji</p>
-                        </a>
-                        <br>
-                        <a href="">
-                            <p class="text-white"><i class="fa-solid fa-location-dot"></i> Panti</p>
-                        </a>
-                        <br>
-                        <a href="">
-                            <p class="text-white"><i class="fa-solid fa-location-dot"></i> Sukowono</p>
-                        </a>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="services-info">
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Bondowoso</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Ranting Kasiyan</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Rambipuji</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Panti</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Sukowono</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="services-info">
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Bondowoso</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Ranting Kasiyan</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Rambipuji</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Panti</p>
+                                </a>
+                                <br>
+                                <a href="">
+                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Sukowono</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -279,10 +317,16 @@
                     <div class="services-info text-center">
                         <a href="">
                             <img src="{{ asset('assets/festive/images/logo/logo_gbijember.png') }}" alt=""
-                                width="250">
+                                width="200">
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center contact-content mt-5 mb-0">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.107505203393!2d113.66091437390902!3d-8.19192458214727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69153c83ddf77%3A0xbeb42df6eff295b8!2sGBI%20Mojopahit%20Jember!5e0!3m2!1sid!2sid!4v1704482015247!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
