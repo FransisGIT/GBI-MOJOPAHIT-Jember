@@ -4,7 +4,7 @@
     <section class="hero-section" id="section_1">
 
         <style>
-            .te {
+            .live_iframe {
                 position: absolute;
                 top: 80px;
                 bottom: 0px;
@@ -33,7 +33,7 @@
             }
 
             @media (max-width:991px) {
-                .te {
+                .live_iframe {
                     width: 71%;
                     height: 49%;
                     bottom: -54px;
@@ -49,17 +49,23 @@
                 }
             }
         </style>
-        <img src="{{ asset('assets/festive/images/banner.png') }}" alt="" class="custom-video border-0 p-0">
-        <iframe class="custom-video border-0 p-0 te" src="https://www.youtube.com/embed/2ZWsapy2cSE?si=2IzdvmEoNHzs04kd"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        <h3 class="custom-video border-0 p-0 text-live">
-            Live Now
-        </h3>
-        {{-- <video autoplay loop muted class="custom-video">
-            <source src="{{ asset('assets/festive/video/Fruitful-Living.mp4') }}" type="video/mp4">
-        </video> --}}
+        @if (pathinfo($data->banner, PATHINFO_EXTENSION) === 'mp4')
+            <video autoplay loop muted class="custom-video border-0 p-0">
+                <source src="{{ asset('/storage/' . $data->banner) }}" type="video/mp4">
+            </video>
+        @elseif (in_array(pathinfo($data->banner, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'], true))
+            <img src="{{ asset('/storage/' . $data->banner) }}" alt="" class="custom-video border-0 p-0">
+        @endif
+
+        @if ($data->link_live)
+            <iframe class="custom-video border-0 p-0 live_iframe" src="{{ $data->link_live }}" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <h3 class="custom-video border-0 p-0 text-live">
+                Live Now
+            </h3>
+        @endif
     </section>
 
 

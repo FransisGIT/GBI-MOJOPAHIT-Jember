@@ -19,5 +19,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(60),
         ]);
+
+        \App\Models\banner_depan_live::create([
+            'banner' => 'admin',
+            'link_live' => 'https://www.youtube.com/embed/AqeThhvK6IY?si=z-RhdZ_QRe32SOzU',
+        ]);
     }
 }

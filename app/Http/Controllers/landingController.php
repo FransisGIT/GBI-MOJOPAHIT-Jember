@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\banner_depan_live;
 use Illuminate\Http\Request;
 
 class landingController extends Controller
 {
     public function halamanHome()
     {
-        return view('landing.home');
+        $data = banner_depan_live::all()->first();
+        return view('landing.home', compact('data'));
     }
 
     public function halamanPersembahan()

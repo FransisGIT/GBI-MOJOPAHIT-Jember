@@ -31,3 +31,12 @@
         order: 4;
     }
 }
+.custom-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    max-height: 600px;
+    vertical-align: middle;
+}

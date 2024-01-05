@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(bannerLivestreamController::class)->group(function () {
         Route::get('/banner-livestream-edit', 'index');
+        Route::post('/banner-livestream-simpan/{id}', 'simpanBannerLive');
     });
 
     Route::controller(berandaController::class)->group(function () {
