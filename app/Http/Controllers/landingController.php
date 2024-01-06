@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\banner_depan_live;
+use App\Models\panel_about;
+use App\Models\visi_misi;
 use Illuminate\Http\Request;
 
 class landingController extends Controller
 {
     public function halamanHome()
     {
-        $data = banner_depan_live::all()->first();
-        return view('landing.home', compact('data'));
+        $dataBannerLive = banner_depan_live::all()->first();
+        $dataPanelAbout = panel_about::all()->first();
+        $dataVisiMisi = visi_misi::all()->first();
+        return view('landing.home', compact('dataBannerLive', 'dataPanelAbout', 'dataVisiMisi'));
     }
 
     public function halamanPersembahan()

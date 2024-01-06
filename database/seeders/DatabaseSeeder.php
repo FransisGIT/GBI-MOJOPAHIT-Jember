@@ -21,8 +21,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\banner_depan_live::create([
-            'banner' => 'admin',
+            'banner' => 'banner.png',
             'link_live' => 'https://www.youtube.com/embed/AqeThhvK6IY?si=z-RhdZ_QRe32SOzU',
+        ]);
+
+        \App\Models\panel_about::create([
+            'link_video' => 'https://www.youtube.com/embed/AqeThhvK6IY?si=z-RhdZ_QRe32SOzU',
+            'judul' => 'its our home',
+            'isi_konten' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo debitis hic perspiciatis blanditiis quia modi reprehenderit magni, molestias vitae ratione.',
+        ]);
+
+        \App\Models\visi_misi::create([
+            'visi' => 'Menjadi Gereja yang Memenuhi Perintah Agung dan Amanat Agung untuk Pergi dan Menjadikan Semua Bangsa Menjadi Murid Kristus',
+            'misi' => 'Perjumpaan dengan Allah, Mengalami Kemerdekaan, Menemukan Tujuan Allah, & Mengemban Amanat Agung'
         ]);
     }
 }

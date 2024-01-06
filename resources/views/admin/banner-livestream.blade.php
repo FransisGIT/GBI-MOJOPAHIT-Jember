@@ -40,8 +40,6 @@
                             @elseif (in_array(pathinfo($data->banner, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'], true))
                                 <img src="{{ asset('/storage/' . $data->banner) }}" alt="{{ $data->banner }}"
                                     class="img-fluid w-60 max-h-32" id="file-preview">
-                            @else
-                                <p>Format file tidak didukung</p>
                             @endif
                         </figure>
 

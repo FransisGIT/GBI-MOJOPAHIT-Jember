@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\visi_misi;
 use Illuminate\Http\Request;
 
 class visimisiController extends Controller
@@ -11,7 +12,8 @@ class visimisiController extends Controller
      */
     public function index()
     {
-        return view('admin.visi-misi');
+        $data = visi_misi::all()->first();
+        return view('admin.visi-misi', compact('data'));
     }
 
     /**
@@ -27,7 +29,6 @@ class visimisiController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -51,7 +52,12 @@ class visimisiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $dataUpdate = visi_misi::find($id);
+        $dataUpdate->update([
+            'visi' => $request->visi,
+            'misi' => $request->misi
+        ]);
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 
     /**

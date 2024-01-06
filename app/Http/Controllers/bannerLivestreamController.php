@@ -48,6 +48,6 @@ class bannerLivestreamController extends Controller
             $data->save();
         }
 
-        return back()->withToastSuccess('Data telah disimpan!');
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 }

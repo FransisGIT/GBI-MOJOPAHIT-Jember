@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\panel_about;
 use Illuminate\Http\Request;
 
 class panelaboutController extends Controller
@@ -11,7 +12,8 @@ class panelaboutController extends Controller
      */
     public function index()
     {
-        return view('admin.panel-about');
+        $data = panel_about::all()->first();
+        return view('admin.panel-about', compact('data'));
     }
 
     /**
@@ -51,7 +53,14 @@ class panelaboutController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $dataUpdate = panel_about::find($id);
+        $dataUpdate->update([
+            'link_video' => htmlspecialchars($request->link_video),
+            'judul' => htmlspecialchars($request->judul),
+            'isi_konten' => htmlspecialchars($request->isi_konten)
+        ]);
+
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 
     /**

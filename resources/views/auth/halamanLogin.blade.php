@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GBI MOJOPAHIT JEMBER | LOGIN</title>
+    <title>GBI MOJOPAHIT | Login</title>
     <link href="{{ asset('assets/sbadminpro/css/styles.css') }}" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/festive/images/logo/logo_gbijember.png') }}" />
     <script data-search-pseudo-elements="" defer=""

@@ -102,7 +102,8 @@
                                     alt="" style="max-width: 15.25rem" />
                             </div>
                             <div class="col">
-                                <p class="mb-4 h-20 fs-1 font-responsive">Selamat Datang di halaman Beranda {Nama username}.
+                                <p class="mb-4 h-20 fs-1 font-responsive">Selamat Datang di halaman Beranda
+                                    {{ Auth::user()->name }}.
                                 </p>
                             </div>
                         </div>

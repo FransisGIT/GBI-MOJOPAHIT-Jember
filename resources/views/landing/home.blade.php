@@ -2,7 +2,6 @@
 
 @section('content')
     <section class="hero-section" id="section_1">
-
         <style>
             .live_iframe {
                 position: absolute;
@@ -49,17 +48,17 @@
                 }
             }
         </style>
-        @if (pathinfo($data->banner, PATHINFO_EXTENSION) === 'mp4')
+        @if (pathinfo($dataBannerLive->banner, PATHINFO_EXTENSION) === 'mp4')
             <video autoplay loop muted class="custom-video border-0 p-0">
-                <source src="{{ asset('/storage/' . $data->banner) }}" type="video/mp4">
+                <source src="{{ asset('/storage/' . $dataBannerLive->banner) }}" type="video/mp4">
             </video>
-        @elseif (in_array(pathinfo($data->banner, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'], true))
-            <img src="{{ asset('/storage/' . $data->banner) }}" alt="" class="custom-video border-0 p-0">
+        @elseif (in_array(pathinfo($dataBannerLive->banner, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'], true))
+            <img src="{{ asset('/storage/' . $dataBannerLive->banner) }}" alt="" class="custom-video border-0 p-0">
         @endif
 
-        @if ($data->link_live)
-            <iframe class="custom-video border-0 p-0 live_iframe" src="{{ $data->link_live }}" title="YouTube video player"
-                frameborder="0"
+        @if ($dataBannerLive->link_live)
+            <iframe class="custom-video border-0 p-0 live_iframe" src="{{ $dataBannerLive->link_live }}"
+                title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
             <h3 class="custom-video border-0 p-0 text-live">
@@ -85,29 +84,23 @@
 
                 <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center order-1">
                     <div class="services-info">
-                        <h3 class="text-white mb-4">INI JUDUL</h3>
-
-                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero
-                            magnam quo commodi quae? Id veniam placeat alias porro cum, commodi sint neque repellat,
-                            hic sed provident, perferendis eaque in? Incidunt, non nostrum eius labore in totam
-                            magni similique maiores impedit sequi iure atque adipisci neque distinctio alias
-                            quibusdam optio voluptate quisquam velit nam recusandae? Quae maiores aliquam
-                            consectetur tenetur et veritatis non facere voluptatem, expedita quod earum corrupti
-                            repellat ea labore ullam recusandae quaerat harum suscipit voluptate, delectus sint
-                            explicabo. Sequi facere minus consectetur ab eos commodi impedit voluptatibus, quas at
-                            eveniet temporibus perspiciatis dolor quae ullam. Libero, minus?.</p>
+                        <div class="h-50">
+                            <h3 class="text-white mb-4">{{ $dataPanelAbout->judul }}</h3>
+                        </div>
+                        <div class="h-50">
+                            <p class="text-white w-75 h5">{{ $dataPanelAbout->isi_konten }}</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-12 order-0">
                     <div class="about-text-wrap d-flex align-content-center justify-content-center">
 
-                        <iframe width="560" height="355" class="about-image"
-                            src="https://www.youtube.com/embed/gEzyb_07fJY?si=hVLyP5sXiT1jm3CQ?t=669&autoplay=1&mute=0"
+                        <iframe width="560" height="355" class="about-image" src="{{ $dataPanelAbout->link_video }}"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -121,22 +114,16 @@
             <div class="row justify-content-center visi-misi">
                 <div class="col-lg-5 col-12 text-center pb-4">
                     <h3 class="text-white">Visi</h3>
-                    <p class="fs-5 fw-normal text-white">Menjadi Gereja yang Memenuhi Perintah Agung dan Amanat
-                        Agung untuk Pergi
-                        dan
-                        Menjadikan Semua
-                        Bangsa Menjadi Murid Kristus
+                    <p class="fs-5 fw-normal text-white">
+                        {{ $dataVisiMisi->visi }}
                     </p>
                 </div>
 
                 <div class="col-lg-5 col-12 text-center text-white">
                     <h3 class="text-white">Misi</h3>
-                    <p class="fs-5 fw-normal text-white">Perjumpaan dengan Allah, Mengalami Kemerdekaan, Menemukan
-                        Tujuan
-                        Allah,
-                        &
-                        Mengemban Amanat
-                        Agung</p>
+                    <p class="fs-5 fw-normal text-white">
+                        {{ $dataVisiMisi->misi }}
+                    </p>
                 </div>
 
             </div>

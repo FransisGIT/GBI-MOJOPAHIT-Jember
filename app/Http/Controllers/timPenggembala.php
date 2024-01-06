@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tim_penggembala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class timPenggembala extends Controller
 {
@@ -11,7 +13,10 @@ class timPenggembala extends Controller
      */
     public function index()
     {
-        return view('admin.tim-penggembala');
+        $data = tim_penggembala::all();
+        $penggembala_count = tim_penggembala::count();
+
+        return view('admin.tim-penggembala', compact('data', 'penggembala_count'));
     }
 
     /**
@@ -27,7 +32,29 @@ class timPenggembala extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = tim_penggembala::create([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan
+        ]);
+
+        if ($request->hasFile('gambar') && is_array($request->file('gambar'))) {
+            foreach ($request->file('gambar') as $file) {
+                if ($file->isValid()) {
+
+                    // Menghasilkan nama file yang diacak (hash)
+                    $hashedFileName = md5(uniqid(rand(), true)) . '.' . $file->getClientOriginalExtension();
+
+                    // Memindahkan gambar baru ke folder public dengan nama hash
+                    $file->move(public_path('storage/'), $hashedFileName);
+
+                    // Menyimpan nama file hash ke database
+                    $data->gambar = $hashedFileName;
+                    $data->save();
+                }
+            }
+        }
+
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 
     /**
@@ -51,7 +78,35 @@ class timPenggembala extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = tim_penggembala::find($id);
+        $data->update([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan
+        ]);
+
+        if ($request->hasFile('gambar') && is_array($request->file('gambar'))) {
+            foreach ($request->file('gambar') as $file) {
+                if ($file->isValid()) {
+
+                    $oldImagePath = public_path('storage/' . $data->gambar);
+                    if (File::exists($oldImagePath)) {
+                        File::delete($oldImagePath);
+                    }
+
+                    // Menghasilkan nama file yang diacak (hash)
+                    $hashedFileName = md5(uniqid(rand(), true)) . '.' . $file->getClientOriginalExtension();
+
+                    // Memindahkan gambar baru ke folder public dengan nama hash
+                    $file->move(public_path('storage/'), $hashedFileName);
+
+                    // Menyimpan nama file hash ke database
+                    $data->gambar = $hashedFileName;
+                    $data->save();
+                }
+            }
+        }
+
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 
     /**
@@ -59,6 +114,11 @@ class timPenggembala extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = tim_penggembala::find($id);
+        $data->delete();
+
+        $oldImagePath = public_path('storage/' . $data->gambar);
+        File::delete($oldImagePath);
+        return back()->withToastSuccess('Data berhasil dihapus!');
     }
 }
