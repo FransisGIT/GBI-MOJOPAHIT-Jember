@@ -52,6 +52,9 @@ class timPenggembala extends Controller
                     $data->save();
                 }
             }
+        } else {
+            $data->gambar = 'default.png';
+            $data->save();
         }
 
         return back()->withToastSuccess('Data berhasil disimpan!');
@@ -88,22 +91,23 @@ class timPenggembala extends Controller
             foreach ($request->file('gambar') as $file) {
                 if ($file->isValid()) {
 
-                    $oldImagePath = public_path('storage/' . $data->gambar);
-                    if (File::exists($oldImagePath)) {
-                        File::delete($oldImagePath);
+                    if ($data->gambar !== 'default.png') {
+                        $oldImagePath = public_path('storage/' . $data->gambar);
+                        if (File::exists($oldImagePath)) {
+                            File::delete($oldImagePath);
+                        }
                     }
 
-                    // Menghasilkan nama file yang diacak (hash)
                     $hashedFileName = md5(uniqid(rand(), true)) . '.' . $file->getClientOriginalExtension();
 
-                    // Memindahkan gambar baru ke folder public dengan nama hash
                     $file->move(public_path('storage/'), $hashedFileName);
 
-                    // Menyimpan nama file hash ke database
                     $data->gambar = $hashedFileName;
                     $data->save();
                 }
             }
+        } else {
+            $data->save();
         }
 
         return back()->withToastSuccess('Data berhasil disimpan!');
@@ -115,10 +119,13 @@ class timPenggembala extends Controller
     public function destroy(string $id)
     {
         $data = tim_penggembala::find($id);
+
+        if ($data->gambar !== 'default.png') {
+            $oldImagePath = public_path('storage/' . $data->gambar);
+            File::delete($oldImagePath);
+        }
         $data->delete();
 
-        $oldImagePath = public_path('storage/' . $data->gambar);
-        File::delete($oldImagePath);
         return back()->withToastSuccess('Data berhasil dihapus!');
     }
 }

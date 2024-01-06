@@ -23,20 +23,30 @@
         <div class="card lift order-1">
             <div class="container">
                 <div class="card-body p-5">
-                    <div class="small text-muted mb-2 d-flex justify-content-end"><a href=""
-                            class="btn btn-sm btn-primary">Simpan</a>
-                    </div>
-                    <hr>
-                    <figure class="d-flex justify-content-center">
-                        <img src="" alt="" class="img-fluid w-60 max-h-32" id="file-preview">
-                    </figure>
+                    <form action="/kelola-persembahan/{{ $data->id }}" method="post" enctype="multipart/form-data"
+                        id="simpan">
+                        @csrf
+                        @method('put')
 
-                    <label>Ubah Gambar</label>
-                    <div class="input-group input-group-joined input-group-solid mb-3">
-                        <span class="input-group-text"><i data-feather="image"></i></span>
-                        <input class="form-control ps-0" type="file" placeholder="Input group prepend..."
-                            aria-label="banner-image" id="file-input" oninput="persembahanPreview()" />
-                    </div>
+                        <div class="small text-muted mb-2 d-flex justify-content-end">
+                            <a onclick="document.getElementById('simpan').submit()" type="button"
+                                class="btn btn-primary">Simpan
+                            </a>
+                        </div>
+                        <hr>
+                        <figure class="d-flex justify-content-center">
+                            <img src="{{ asset('/storage/' . $data->gambar) }}" alt="{{ $data->gambar }}"
+                                class="img-fluid w-60 max-h-32" id="file-preview">
+                        </figure>
+
+                        <label>Ubah Gambar</label>
+                        <div class="input-group input-group-joined input-group-solid mb-3">
+                            <span class="input-group-text"><i data-feather="image"></i></span>
+                            <input class="form-control ps-0" name="gambar[]" type="file" placeholder="Upload gambar"
+                                aria-label="banner-image" id="file-input" oninput="persembahanPreview()"
+                                value="{{ $data->gambar }}" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

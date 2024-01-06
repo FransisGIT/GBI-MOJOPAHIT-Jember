@@ -10,8 +10,8 @@
                 <div class="col-lg-12 col-12">
                     <div class="gambar d-flex align-content-center justify-content-center">
                         <div class="text-center">
-                            <img src="{{ asset('assets/festive/images/persembahan.png') }}" alt="gambar"
-                                class="w-100 rounded-4">
+                            <img src="{{ asset('/storage/' . $dataPersembahan->gambar) }}"
+                                alt="{{ $dataPersembahan->gambar }}" class="w-100 rounded-4">
                         </div>
                     </div>
                 </div>

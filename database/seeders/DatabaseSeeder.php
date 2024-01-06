@@ -35,5 +35,9 @@ class DatabaseSeeder extends Seeder
             'visi' => 'Menjadi Gereja yang Memenuhi Perintah Agung dan Amanat Agung untuk Pergi dan Menjadikan Semua Bangsa Menjadi Murid Kristus',
             'misi' => 'Perjumpaan dengan Allah, Mengalami Kemerdekaan, Menemukan Tujuan Allah, & Mengemban Amanat Agung'
         ]);
+
+        \App\Models\persembahan::create([
+            'gambar' => 'default.png',
+        ]);
     }
 }

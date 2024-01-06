@@ -34,7 +34,7 @@
                         <hr>
                         <figure class="d-flex justify-content-center">
                             @if (pathinfo($data->banner, PATHINFO_EXTENSION) === 'mp4')
-                                <video autoplay loop muted class="custom-video border-0 p-0">
+                                <video controls loop muted class="custom-video border-0 p-0">
                                     <source src="{{ asset('/storage/' . $data->banner) }}" type="video/mp4">
                                 </video>
                             @elseif (in_array(pathinfo($data->banner, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'], true))

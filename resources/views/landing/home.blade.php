@@ -186,21 +186,12 @@
                 <div id="splide" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <li class="splide__slide"><img
-                                    src="{{ asset('assets/festive/images/person/foto-0.16336512361323263.png') }}"
-                                    class="d-block w-100 person" alt="..." width="500" height="500">
-                                <h4 class="text-white text-center mb-5 tim">Gembala</h4>
-                            </li>
-                            <li class="splide__slide"> <img
-                                    src="{{ asset('assets/festive/images/person/foto-0.15418167038501807.png') }}"
-                                    class="d-block w-100 person" alt="..." width="500" height="500">
-                                <h4 class="text-white text-center mb-5 tim">Tim Penggembala</h4>
-                            </li>
-                            <li class="splide__slide"><img
-                                    src="{{ asset('assets/festive/images/person/foto-0.3179698737538298.png') }}"
-                                    class="d-block w-100 person" alt="..." width="500"height="500">
-                                <h4 class="text-white text-center mb-5 tim">Tim Penggembala</h4>
-                            </li>
+                            @foreach ($dataTimPenggembala as $tim_penggembala)
+                                <li class="splide__slide"><img src="{{ asset('/storage/' . $tim_penggembala->gambar) }}"
+                                        class="d-block w-100 person" alt="..." width="500" height="500">
+                                    <h4 class="text-white text-center mb-5 tim">{{ $tim_penggembala->jabatan }}</h4>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

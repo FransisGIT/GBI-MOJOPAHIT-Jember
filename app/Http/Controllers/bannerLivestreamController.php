@@ -20,23 +20,22 @@ class bannerLivestreamController extends Controller
         $data->update($request->except('banner'));
 
         if ($request->hasFile('banner') && is_array($request->file('banner'))) {
-            // Hanya melakukan operasi jika file banner diunggah dan merupakan array
-
             foreach ($request->file('banner') as $file) {
                 if ($file->isValid()) {
-                    // Memproses setiap file yang valid
-                    $oldImagePath = public_path('storage/' . $data->banner);
 
+                    $oldImagePath = public_path('storage/' . $data->banner);
                     if (File::exists($oldImagePath)) {
                         File::delete($oldImagePath);
                     }
 
-                    // Memindahkan gambar baru ke folder public
-                    $newImagePath = 'storage/' . $file->getClientOriginalName();
-                    $file->move(public_path('storage/'), $newImagePath);
+                    // Menghasilkan nama file yang diacak (hash)
+                    $hashedFileName = md5(uniqid(rand(), true)) . '.' . $file->getClientOriginalExtension();
 
-                    // Mengupdate nama gambar baru di database
-                    $data->banner = $file->getClientOriginalName();
+                    // Memindahkan banner baru ke folder public dengan nama hash
+                    $file->move(public_path('storage/'), $hashedFileName);
+
+                    // Menyimpan nama file hash ke database
+                    $data->banner = $hashedFileName;
                     $data->save();
                 }
             }
