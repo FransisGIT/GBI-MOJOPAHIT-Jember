@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('our_generations', function (Blueprint $table) {
             $table->id();
             $table->string('gambar')->nullable();
+            $table->string('nama_generation')->nullable();
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
         });

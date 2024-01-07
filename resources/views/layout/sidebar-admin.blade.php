@@ -15,7 +15,7 @@
                 <a class="nav-link {{ Request::is('banner-livestream-edit') ? 'active' : '' }}"
                     href="/banner-livestream-edit">
                     <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                    Banner Depan & Live Stream
+                    Banner Depan & Live
                 </a>
 
                 <a class="nav-link {{ Request::is('panel-about') ? 'active' : '' }}" href="/panel-about">
