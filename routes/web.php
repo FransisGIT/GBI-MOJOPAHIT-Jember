@@ -8,6 +8,7 @@ use App\Http\Controllers\landingController;
 use App\Http\Controllers\ourgenerationController;
 use App\Http\Controllers\panelaboutController;
 use App\Http\Controllers\persembahanController;
+use App\Http\Controllers\renunganController;
 use App\Http\Controllers\sosmedkontakController;
 use App\Http\Controllers\timPenggembala;
 use App\Http\Controllers\visimisiController;
@@ -32,6 +33,7 @@ Route::get('/renungan', [landingController::class, 'halamanRenungan'])->name('ha
 
 Route::get('/kontak', [landingController::class, 'halamanKontak'])->name('halamanKontak');
 
+Route::get('cabang/{id}', [landingController::class, 'halamanCabangGereja'])->name('halamanCabangGereja');
 
 Route::middleware(['guest'])->group(function () {
     Route::controller(authController::class)->group(function () {
@@ -66,4 +68,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('info-kontak', sosmedkontakController::class);
 
     Route::resource('cabang-gereja', cabanggerejaController::class);
+
+    Route::resource('kelola-renungan', renunganController::class);
 });

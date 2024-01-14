@@ -52,17 +52,10 @@
                     <div class="nav-link-icon"><i data-feather="repeat"></i></div>
                     Cabang Gereja
                 </a>
-                <!-- Sidenav Heading (Addons)-->
-                <div class="sidenav-menu-heading">Plugins</div>
-                <!-- Sidenav Link (Charts)-->
-                <a class="nav-link" href="charts.html">
-                    <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
-                    Charts
-                </a>
-                <!-- Sidenav Link (Tables)-->
-                <a class="nav-link" href="tables.html">
-                    <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                    Tables
+
+                <a class="nav-link {{ Request::is('kelola-renungan') ? 'active' : '' }}" href="/kelola-renungan">
+                    <div class="nav-link-icon"><i data-feather="repeat"></i></div>
+                    Renungan
                 </a>
             </div>
         </div>

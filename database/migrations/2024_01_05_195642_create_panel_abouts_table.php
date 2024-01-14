@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('link_video')->nullable();
             $table->string('judul')->nullable();
-            $table->string('isi_konten')->nullable();
+            $table->text('isi_konten')->nullable();
         });
     }
 

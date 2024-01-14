@@ -2,52 +2,6 @@
 
 @section('content')
     <section class="hero-section" id="section_1">
-        <style>
-            .live_iframe {
-                position: absolute;
-                top: 80px;
-                bottom: 0px;
-                left: 0px;
-                right: 0px;
-                width: 52%;
-                height: 66%;
-                margin: auto;
-                border-radius: 25px;
-                z-index: 3;
-            }
-
-            .text-live {
-                text-align: center;
-                position: absolute;
-                /* top: 80px; */
-                bottom: 400px;
-                left: 0px;
-                right: 0px;
-                width: 14%;
-                height: 0;
-                margin: auto;
-                border-radius: 25px;
-                z-index: 3;
-                color: white;
-            }
-
-            @media (max-width:991px) {
-                .live_iframe {
-                    width: 71%;
-                    height: 49%;
-                    bottom: -54px;
-                }
-
-                .text-live {
-                    width: 30%;
-                    height: 21%;
-                    bottom: 10px;
-                    text-align: center;
-                    color: white;
-                    font-size: medium;
-                }
-            }
-        </style>
         @if (pathinfo($dataBannerLive->banner, PATHINFO_EXTENSION) === 'mp4')
             <video autoplay loop muted class="custom-video border-0 p-0">
                 <source src="{{ asset('/storage/' . $dataBannerLive->banner) }}" type="video/mp4">
@@ -81,22 +35,21 @@
         </div> --}}
         <div class="container">
             <div class="row">
-
-                <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center order-1">
-                    <div class="services-info">
-                        <div class="h-50">
+                <div class="col-lg-6 col-12 mb-4 d-flex align-items-center order-1">
+                    <div class="services-info konten" style="max-width: 100%;">
+                        <div class="w-full">
                             <h3 class="text-white mb-4">{{ $dataPanelAbout->judul }}</h3>
                         </div>
-                        <div class="h-50">
-                            <p class="text-white w-75 h5">{{ $dataPanelAbout->isi_konten }}</p>
+                        <div class="h-50 isi_konten">
+                            <pre class="text-white w-100 h5 overflow-auto prewrap break-long-words pre_isi_konten">{{ $dataPanelAbout->isi_konten }}</pre>
                         </div>
                     </div>
                 </div>
 
+
                 <div class="col-lg-6 col-12 order-0">
                     <div class="about-text-wrap d-flex align-content-center justify-content-center">
-
-                        <iframe width="560" height="355" class="about-image" src="{{ $dataPanelAbout->link_video }}"
+                        <iframe width="100%" height="355" class="about-image" src="{{ $dataPanelAbout->link_video }}"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -104,9 +57,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-
 
     <section class="artists-section section-padding" id="section_3"
         style="background-color: black;object-fit: cover;width: 100%;height: 100%;background-repeat: no-repeat;background-size: cover;">
@@ -206,33 +159,18 @@
             <div class="justify-content-center">
                 <h3 class="text-white mb-4 text-center">Our Generation</h3>
                 <div class="row">
-                    <div class="col">
-                        <img src="{{ asset('assets/festive/images/logo/gps.png') }}" class="d-block w-100 person"
-                            alt="..." width="200" height="200">
-                        <div class="text-center">
-                            <a href="" class="link"><i class="fa-brands fa-youtube"></i></i> Youtube</a>
-                            <a href=""><i class="fa-brands fa-instagram"></i></i>
-                                Instagram</a>
+                    @foreach ($dataOurGeneration as $our_generation)
+                        <div class="col">
+                            <img src="{{ asset('/storage/' . $our_generation->gambar) }}" class="d-block w-100 person"
+                                alt="{{ $our_generation->gambar }}" width="200" height="200">
+                            <div class="text-center">
+                                <a href="{{ $our_generation->youtube }}" class="link"><i
+                                        class="fa-brands fa-youtube"></i></i> Youtube</a>
+                                <a href="{{ $our_generation->instagram }}"><i class="fa-brands fa-instagram"></i></i>
+                                    Instagram</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <img src="{{ asset('assets/festive/images/logo/ga.png') }}" class="d-block w-100 person"
-                            alt="..." width="200" height="200">
-                        <div class="text-center">
-                            <a href="" class="link"><i class="fa-brands fa-youtube"></i></i> Youtube</a>
-                            <a href=""><i class="fa-brands fa-instagram"></i></i>
-                                Instagram</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="{{ asset('assets/festive/images/logo/youth.png') }}" class="d-block w-100 person"
-                            alt="..." width="200"height="200">
-                        <div class="text-center">
-                            <a href="" class="link"><i class="fa-brands fa-youtube"></i></i> Youtube</a>
-                            <a href=""><i class="fa-brands fa-instagram"></i></i>
-                                Instagram</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -246,58 +184,27 @@
                 <div class="col-lg-8 col-12 mx-auto contact-content">
                     <h3 class="text-center mb-5 text-white">Cabang Gereja</h3>
                 </div>
-                <div class="col-lg-6 col-12 mb-4 mb-lg-0 order-1 contact-content">
+                <div class="col-lg-6 col-12 mb-2 mb-lg-0 order-1 contact-content">
                     <div class="row mb-3">
-                        <div class="col">
-                            <div class="services-info">
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Bondowoso</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Ranting Kasiyan</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Rambipuji</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Panti</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Sukowono</p>
-                                </a>
+                        <style>
+
+                        </style>
+
+                        @foreach ($dataCabangGereja as $cabang_gereja)
+                            <div class="col-6">
+                                <div class="services-info">
+                                    <br />
+                                    <a href="{{ $cabang_gereja->link_cabang }}" class="text-white link hover-color">
+                                        <i class="fa-solid fa-location-dot"></i> {{ $cabang_gereja->cabang }}
+                                    </a>
+                                    <br />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="services-info">
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Bondowoso</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Ranting Kasiyan</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Rambipuji</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Panti</p>
-                                </a>
-                                <br>
-                                <a href="">
-                                    <p class="text-white"><i class="fa-solid fa-location-dot"></i> Sukowono</p>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-12 mb-4 mb-lg-0 order-0 contact-content">
+                <div class="col-lg-6 col-12 mb-0 pt-4 mb-lg-0 order-0 contact-content">
                     <div class="services-info text-center">
                         <a href="">
                             <img src="{{ asset('assets/festive/images/logo/logo_gbijember.png') }}" alt=""
@@ -306,11 +213,13 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center align-items-center contact-content mt-5 mb-0">
-                <iframe
+
+            <div class="about-text-wrap d-flex align-content-center justify-content-center contact-content">
+                <iframe width="650" height="500" class="about-image"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.107505203393!2d113.66091437390902!3d-8.19192458214727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69153c83ddf77%3A0xbeb42df6eff295b8!2sGBI%20Mojopahit%20Jember!5e0!3m2!1sid!2sid!4v1704482015247!5m2!1sid!2sid"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    title="YouTube video player" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>

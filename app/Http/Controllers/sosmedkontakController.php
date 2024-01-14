@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\sosmed_kontak;
 use Illuminate\Http\Request;
 
 class sosmedkontakController extends Controller
@@ -11,7 +12,8 @@ class sosmedkontakController extends Controller
      */
     public function index()
     {
-        return view('admin.sosmed-kontak');
+        $data = sosmed_kontak::all()->first();
+        return view('admin.sosmed-kontak', compact('data'));
     }
 
     /**
@@ -51,7 +53,17 @@ class sosmedkontakController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $dataUpdate = sosmed_kontak::find($id);
+        $dataUpdate->update([
+            'instagram' => htmlspecialchars($request->instagram),
+            'youtube' => htmlspecialchars($request->youtube),
+            'email' => htmlspecialchars($request->email),
+            'facebook' => htmlspecialchars($request->facebook),
+            'tiktok' => htmlspecialchars($request->tiktok),
+            'telepon' => htmlspecialchars($request->telepon),
+        ]);
+
+        return back()->withToastSuccess('Data berhasil disimpan!');
     }
 
     /**

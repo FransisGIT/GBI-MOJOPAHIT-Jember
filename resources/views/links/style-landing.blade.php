@@ -14,3 +14,5 @@
 <link href="{{ asset('assets/festive/css/templatemo-festava-live.css') }}" rel="stylesheet">
 
 <link href="{{ asset('assets/festive/css/splide.css') }}" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ asset('assets/festive/css/custom.css') }}">

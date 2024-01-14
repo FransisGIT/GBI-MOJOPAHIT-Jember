@@ -1,0 +1,85 @@
+.live_iframe {
+    position: absolute;
+    top: 80px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 52%;
+    height: 66%;
+    margin: auto;
+    border-radius: 25px;
+    z-index: 3;
+}
+
+.text-live {
+    text-align: center;
+    position: absolute;
+    /* top: 80px; */
+    bottom: 400px;
+    left: 0px;
+    right: 0px;
+    width: 14%;
+    height: 0;
+    margin: auto;
+    border-radius: 25px;
+    z-index: 3;
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .live_iframe {
+        width: 71%;
+        height: 49%;
+        bottom: -54px;
+    }
+
+    .text-live {
+        width: 30%;
+        height: 21%;
+        bottom: 10px;
+        text-align: center;
+        color: white;
+        font-size: medium;
+    }
+
+    .konten {
+        margin-top: -120px;
+    }
+}
+
+@media (max-width: 500px) {
+    .prewrap {
+        max-width: 100% !important;
+    }
+}
+
+.hover-color:hover {
+    background-color: black;
+    border-radius: 25px;
+    padding-left: 7px;
+}
+
+.about-cabang {
+    position: relative;
+    padding-bottom: 50px;
+    margin-top: 150px;
+}
+
+.konten {
+    padding-top: 120px;
+}
+
+.isi_konten {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.isi_konten::-webkit-scrollbar {
+    display: none;
+}
+
+.pre_isi_konten {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+}

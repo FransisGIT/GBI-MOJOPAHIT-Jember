@@ -39,5 +39,14 @@ class DatabaseSeeder extends Seeder
         \App\Models\persembahan::create([
             'gambar' => 'default.png',
         ]);
+
+        \App\Models\sosmed_kontak::create([
+            'instagram' => 'https://www.instagram.com/gbimojopahitjember',
+            'youtube' => 'https://www.youtube.com/channel/UCQRxk5mJSgTBLGC06rMtJag',
+            'email' => 'https://gbimojopahit.org/gbimojopahitjember@gmail.com',
+            'facebook' => 'https://web.facebook.com/profile.php?id=100057167521658',
+            'tiktok' => 'https://vt.tiktok.com/ZSJcRff7N/',
+            'telepon' => '0331-421724',
+        ]);
     }
 }
