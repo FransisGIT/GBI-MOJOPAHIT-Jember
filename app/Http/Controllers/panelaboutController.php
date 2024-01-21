@@ -57,7 +57,7 @@ class panelaboutController extends Controller
         $dataUpdate->update([
             'link_video' => htmlspecialchars($request->link_video),
             'judul' => htmlspecialchars($request->judul),
-            'isi_konten' => htmlspecialchars($request->isi_konten)
+            'deskripsi' => htmlspecialchars($request->isi_konten)
         ]);
 
         return back()->withToastSuccess('Data berhasil disimpan!');

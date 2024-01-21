@@ -51,9 +51,11 @@
                                         </div>
                                         <div class="small text-muted">
                                             <a class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal"
-                                                data-bs-target="#edit{{ $d->id }}">Edit</a>
+                                                data-bs-target="#edit{{ $d->id }}"><i
+                                                    class="fa-solid fa-pen-to-square"></i></a>
                                             <a class="btn btn-sm btn-danger" type="button" data-bs-toggle="modal"
-                                                data-bs-target="#delete{{ $d->id }}">Hapus</a>
+                                                data-bs-target="#delete{{ $d->id }}"><i
+                                                    class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                 </div>

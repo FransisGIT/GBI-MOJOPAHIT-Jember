@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\panel_about::create([
             'link_video' => 'https://www.youtube.com/embed/AqeThhvK6IY?si=z-RhdZ_QRe32SOzU',
             'judul' => 'its our home',
-            'isi_konten' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo debitis hic perspiciatis blanditiis quia modi reprehenderit magni, molestias vitae ratione.',
+            'deskripsi' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo debitis hic perspiciatis blanditiis quia modi reprehenderit magni, molestias vitae ratione.',
         ]);
 
         \App\Models\visi_misi::create([
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\sosmed_kontak::create([
             'instagram' => 'https://www.instagram.com/gbimojopahitjember',
             'youtube' => 'https://www.youtube.com/channel/UCQRxk5mJSgTBLGC06rMtJag',
-            'email' => 'https://gbimojopahit.org/gbimojopahitjember@gmail.com',
+            'email' => 'gbimojopahitjember@gmail.com',
             'facebook' => 'https://web.facebook.com/profile.php?id=100057167521658',
             'tiktok' => 'https://vt.tiktok.com/ZSJcRff7N/',
             'telepon' => '0331-421724',

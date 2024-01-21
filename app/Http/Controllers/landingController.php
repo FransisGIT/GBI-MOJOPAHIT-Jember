@@ -7,11 +7,13 @@ use App\Models\cabang_gereja;
 use App\Models\our_generation;
 use App\Models\panel_about;
 use App\Models\persembahan;
+use App\Models\renungan;
 use App\Models\sosmed_kontak;
 use App\Models\tim_penggembala;
 use App\Models\visi_misi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Parsedown;
 
 class landingController extends Controller
 {
@@ -31,7 +33,10 @@ class landingController extends Controller
         $dataTimPenggembala = tim_penggembala::all();
         $dataOurGeneration = our_generation::all();
         $dataCabangGereja = cabang_gereja::all();
-        return view('landing.home', compact('dataBannerLive', 'dataPanelAbout', 'dataVisiMisi', 'dataTimPenggembala', 'dataOurGeneration', 'dataCabangGereja'));
+
+        $parsedown = new Parsedown();
+
+        return view('landing.home', compact('dataBannerLive', 'dataPanelAbout', 'dataVisiMisi', 'dataTimPenggembala', 'dataOurGeneration', 'dataCabangGereja', 'parsedown'));
     }
 
     public function halamanPersembahan()
@@ -42,7 +47,8 @@ class landingController extends Controller
 
     public function halamanRenungan()
     {
-        return view('landing.renungan');
+        $dataRenungan =  renungan::latest()->paginate(21);
+        return view('landing.renungan', compact('dataRenungan'));
     }
 
     public function halamanCabangGereja(Request $request, $id)

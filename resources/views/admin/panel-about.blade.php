@@ -54,8 +54,8 @@
                                 aria-label="judul" value="{{ $data->judul }}" />
                         </div>
                         <div class="mb-3">
-                            <label>Isi Konten</label>
-                            <textarea class="form-control" cols="30" rows="10" name="isi_konten" placeholder="Masukkan isi konten.">{{ $data->isi_konten }}</textarea>
+                            <label>Deskripsi</label>
+                            <textarea id="deskripsi" name="isi_konten">{{ $data->deskripsi }}</textarea>
                         </div>
                     </div>
                 </form>

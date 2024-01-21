@@ -1,3 +1,13 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: white;
+}
+
 .live_iframe {
     position: absolute;
     top: 80px;
@@ -28,15 +38,15 @@
 
 @media (max-width: 991px) {
     .live_iframe {
-        width: 71%;
-        height: 49%;
+        width: 80%;
+        height: 45%;
         bottom: -54px;
     }
 
     .text-live {
         width: 30%;
         height: 21%;
-        bottom: 10px;
+        bottom: 5px;
         text-align: center;
         color: white;
         font-size: medium;

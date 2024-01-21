@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <iframe id="video-preview" width="420" height="345" class="mb-3 d-none"
+                            <iframe id="video-preview" width="1300" height="500" class="mb-3 d-none"
                                 title="Youtube Video" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen>

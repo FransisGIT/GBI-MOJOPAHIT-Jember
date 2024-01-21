@@ -44,13 +44,13 @@
                         <div class="me-3">
                             <div class="row">
                                 <div class="col-7">
-                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <i class="feather-xl text-primary mb-3" data-feather="book"></i>
                                 </div>
                                 <div class="col-5">
-                                    <div class="fw-bolder fs-1 pl-3 float-end">100000</div>
+                                    <div class="fw-bolder fs-1 pl-3 float-end">{{ $countRenungan }}</div>
                                 </div>
                             </div>
-                            <h3>Total Artikel</h3>
+                            <h3>Total Renungan</h3>
                         </div>
                     </div>
                 </a>
@@ -62,13 +62,13 @@
                         <div class="me-3">
                             <div class="row">
                                 <div class="col-7">
-                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <i class="feather-xl text-primary mb-3" data-feather="home"></i>
                                 </div>
                                 <div class="col-5">
-                                    <div class="fw-bolder fs-1 pl-3 float-end">3232</div>
+                                    <div class="fw-bolder fs-1 pl-3 float-end">{{ $countCabangGereja }}</div>
                                 </div>
                             </div>
-                            <h3>Total Artikel</h3>
+                            <h3>Total Cabang Gereja</h3>
                         </div>
                     </div>
                 </a>
@@ -80,13 +80,13 @@
                         <div class="me-3">
                             <div class="row">
                                 <div class="col-7">
-                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <i class="feather-xl text-primary mb-3" data-feather="user"></i>
                                 </div>
                                 <div class="col-5">
-                                    <div class="fw-bolder fs-1 pl-3 float-end">123</div>
+                                    <div class="fw-bolder fs-1 pl-3 float-end">{{ $countUser }}</div>
                                 </div>
                             </div>
-                            <h3>Total Artikel</h3>
+                            <h3>Total User</h3>
                         </div>
                     </div>
                 </a>

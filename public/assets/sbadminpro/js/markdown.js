@@ -7,3 +7,8 @@ var easyMDEMisi = new EasyMDE({
     element: document.getElementById('misiEditor'),
     toolbar: ['bold', 'italic', 'heading', '|', 'quote', 'unordered-list', 'ordered-list', '|', 'link', 'image', '|', 'preview', 'guide']
 });
+
+var easyMDEdeskripsi = new EasyMDE({
+    element: document.getElementById('deskripsi'),
+    toolbar: ['bold', 'italic', 'heading', '|', 'quote', 'unordered-list', 'ordered-list', '|', 'link', 'image', '|', 'preview', 'guide']
+});

@@ -45,3 +45,7 @@
     max-height: 600px;
     vertical-align: middle;
 }
+
+.no-pointer {
+    cursor: default;
+}

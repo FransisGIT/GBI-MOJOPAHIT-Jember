@@ -36,12 +36,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12 mb-4 d-flex align-items-center order-1">
-                    <div class="services-info konten" style="max-width: 100%;">
+                    <div class="services-info konten text-white" style="max-width: 100%;">
                         <div class="w-full">
                             <h3 class="text-white mb-4">{{ $dataPanelAbout->judul }}</h3>
                         </div>
-                        <div class="h-50 isi_konten">
-                            <pre class="text-white w-100 h5 overflow-auto prewrap break-long-words pre_isi_konten">{{ $dataPanelAbout->isi_konten }}</pre>
+                        <div class="h-50 isi_konten text-white">
+                            <h4 class="text-white">{!! $parsedown->text($dataPanelAbout->deskripsi) !!}</h4>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,6 @@
             </div>
         </div>
     </section>
-
 
 
     <section class="pricing-section section-padding" id="section_5">

@@ -9,65 +9,31 @@
         </div>
     </section>
 
-
-
-
     <section class="renungan-section" id="section_2">
         <div class="container">
             <div class="row">
-                <div class="col d-flex justify-content-center mt-5">
-                    <div class="card border-0" style="width: 18rem;">
-                        <img src="https://www.shutterstock.com/image-photo/close-open-bible-cup-coffee-600nw-1062579482.jpg"
-                            class="card-img-top" alt="...">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                @foreach ($dataRenungan as $d)
+                    <div class="col d-flex justify-content-center mt-5">
+                        <div class="card border-0" style="width: 18rem;">
+                            <figure>
+                                <img src="{{ asset('/storage/' . $d->gambar) }}" class="card-img-top aspect" alt="gambar">
+                            </figure>
+                            <div class="card-body text-start">
+                                <h6 class="card-title text-black fs-4">{{ $d->judul_renungan }}</h6>
+                                <h5 class="card-text text-black small">
+                                    {{ \Carbon\Carbon::parse($d->dibuat)->format('d F Y') }}</h5>
+                                <p class="card-text text-black fs-6" id="isi_renungan">
+                                    {{ substr(preg_replace('/[^\p{L}\p{N}\s]/u', '', $d->isi_renungan), 0, 200) }}
+                                    <span><a href="" class="text-black fw-bold">Baca Selengkapnya</a></span>
+                                </p>
+                                <a href="https://api.whatsapp.com/send?text={{ $d->isi_renungan }}"
+                                    class="btn btn-success">Share WA</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col d-flex justify-content-center mt-5">
-                    <div class="card border-0" style="width: 18rem;">
-                        <img src="https://www.shutterstock.com/image-photo/close-open-bible-cup-coffee-600nw-1062579482.jpg"
-                            class="card-img-top" alt="...">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center mt-5">
-                    <div class="card border-0" style="width: 18rem;">
-                        <img src="https://www.shutterstock.com/image-photo/close-open-bible-cup-coffee-600nw-1062579482.jpg"
-                            class="card-img-top" alt="...">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center mt-5">
-                    <div class="card border-0" style="width: 18rem;">
-                        <img src="https://www.shutterstock.com/image-photo/close-open-bible-cup-coffee-600nw-1062579482.jpg"
-                            class="card-img-top" alt="...">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            {{ $dataRenungan->links() }}
         </div>
     </section>
 @endsection

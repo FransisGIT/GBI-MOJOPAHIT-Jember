@@ -27,11 +27,9 @@ class authController extends Controller
         if (Auth::attempt($validasi)) {
             $request->session()->regenerate();
             return redirect('/beranda')->withToastSuccess('Selamat datang di beranda!');;
+        } else {
+            return back()->withToastError('Username atau Kata sandi salah');
         }
-
-        return back()->withToastError([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
     }
 
     function fungsiLogout(Request $request)
