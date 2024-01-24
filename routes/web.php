@@ -4,6 +4,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\bannerLivestreamController;
 use App\Http\Controllers\berandaController;
 use App\Http\Controllers\cabanggerejaController;
+use App\Http\Controllers\kelolauserController;
 use App\Http\Controllers\landingController;
 use App\Http\Controllers\ourgenerationController;
 use App\Http\Controllers\panelaboutController;
@@ -70,4 +71,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cabang-gereja', cabanggerejaController::class);
 
     Route::resource('kelola-renungan', renunganController::class);
+
+    Route::middleware(['superadmin'])->group(function () {
+        Route::resource('kelola-user', kelolauserController::class);
+    });
 });

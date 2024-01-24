@@ -103,7 +103,7 @@
                             </div>
                             <div class="col">
                                 <p class="mb-4 h-20 fs-1 font-responsive">Selamat Datang di halaman Beranda
-                                    {{ Auth::user()->name }}.
+                                    {{ Auth::user()->role }} {{ Auth::user()->username }}.
                                 </p>
                             </div>
                         </div>

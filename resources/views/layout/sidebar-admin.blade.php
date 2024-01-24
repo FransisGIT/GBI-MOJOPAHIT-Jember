@@ -10,6 +10,15 @@
                     Beranda
                 </a>
                 <!-- Sidenav Heading (Custom)-->
+                @if (auth()->check() &&
+                        auth()->user()->hasRole('Superadmin'))
+                    <div class="sidenav-menu-heading">Fitur Superadmin</div>
+                    <a class="nav-link {{ Request::is('kelola-user') ? 'active' : '' }}" href="/kelola-user">
+                        <div class="nav-link-icon"><i class="fa-solid fa-user"></i></div>
+                        Kelola User
+                    </a>
+                @endif
+
                 <div class="sidenav-menu-heading">Kelola Halaman Depan</div>
                 <!-- Sidenav Accordion (Pages)-->
                 <a class="nav-link {{ Request::is('banner-livestream-edit') ? 'active' : '' }}"
@@ -64,7 +73,7 @@
         <div class="sidenav-footer">
             <div class="sidenav-footer-content">
                 <div class="sidenav-footer-subtitle">Login sebagai:</div>
-                <div class="sidenav-footer-title">{{ Auth::user()->name }}</div>
+                <div class="sidenav-footer-title">{{ Auth::user()->username }}</div>
             </div>
         </div>
         <div class="p-3">

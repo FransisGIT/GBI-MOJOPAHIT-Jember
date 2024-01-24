@@ -33,16 +33,16 @@
                     </a>
                     <a href="/setting-akun">
                         <div class="dropdown-user-details">
-                            <div class="dropdown-user-details-name">{{ Auth::user()->name }}</div>
-                            <div class="dropdown-user-details-email">{{ Auth::user()->username }}</div>
+                            <div class="dropdown-user-details-name">{{ Auth::user()->username }}</div>
+                            <div class="dropdown-user-details-email">{{ Auth::user()->role }}</div>
                         </div>
                     </a>
                 </h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/setting-akun">
+                {{-- <a class="dropdown-item" href="/setting-akun">
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                     Setting Akun
-                </a>
+                </a> --}}
                 <a class="dropdown-item" href="/logout">
                     <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                     Logout
