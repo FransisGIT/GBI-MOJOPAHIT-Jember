@@ -1,4 +1,5 @@
 @extends('landing')
+@section('title', 'GBI MOJOPAHIT')
 
 @section('content')
     <section class="hero-section" id="section_1">
@@ -41,7 +42,7 @@
                             <h3 class="text-white mb-4">{{ $dataPanelAbout->judul }}</h3>
                         </div>
                         <div class="h-50 isi_konten text-white">
-                            <h4 class="text-white">{!! $parsedown->text($dataPanelAbout->deskripsi) !!}</h4>
+                            <h4>{!! $parsedown->text($dataPanelAbout->deskripsi) !!}</h4>
                         </div>
                     </div>
                 </div>

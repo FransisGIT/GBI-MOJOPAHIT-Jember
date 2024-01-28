@@ -8,7 +8,7 @@
     <meta name="author" content="">
     @include('links.style-landing')
 
-    <title>GBI MOJOPAHIT JEMBER</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>

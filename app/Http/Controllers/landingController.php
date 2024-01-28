@@ -14,6 +14,7 @@ use App\Models\visi_misi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Parsedown;
+use ParsedownExtra;
 
 class landingController extends Controller
 {
@@ -49,6 +50,24 @@ class landingController extends Controller
     {
         $dataRenungan =  renungan::latest()->paginate(21);
         return view('landing.renungan', compact('dataRenungan'));
+    }
+
+    public function daftarRenungan(Request $request, $id)
+    {
+        $data = renungan::find($id);
+        $parsedown = new Parsedown();
+
+        $htmlContent = $parsedown->text($data->isi_renungan);
+
+        $htmlContent = str_replace('<p>', '<p style="color: black;font-weight: 400;">', $htmlContent);
+        $htmlContent = str_replace('<h1>', '<h1 style="color: black;">', $htmlContent);
+        $htmlContent = str_replace('<h2>', '<h2 style="color: black;">', $htmlContent);
+        $htmlContent = str_replace('<h3>', '<h3 style="color: black;">', $htmlContent);
+        $htmlContent = str_replace('<h4>', '<h4 style="color: black;">', $htmlContent);
+        $htmlContent = str_replace('<h5>', '<h5 style="color: black;">', $htmlContent);
+        $htmlContent = str_replace('<h6>', '<h6 style="color: black;font-weight: semibold;">', $htmlContent);
+
+        return view('landing.daftar-renungan', compact('data', 'htmlContent'));
     }
 
     public function halamanCabangGereja(Request $request, $id)

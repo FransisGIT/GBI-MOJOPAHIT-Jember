@@ -1,4 +1,5 @@
 @extends('landing')
+@section('title', 'GBI MOJOPAHIT')
 @section('content')
     <section class="hero-section" id="section_1">
     </section>

@@ -48,6 +48,7 @@
                             <span class="input-group-text"><i data-feather="image"></i></span>
                             <input class="form-control ps-0" type="file" placeholder="Input group prepend..."
                                 aria-label="banner-image" name="banner[]" id="file-input" oninput="bannerPreview()" />
+                            <label class="text-black-50">Support PNG,JPG,MP4,GIF</label>
                         </div>
 
                         <div class="d-flex justify-content-center">
@@ -65,8 +66,65 @@
                                 placeholder="Masukkan link video" aria-label="livestream" id="video-url"
                                 oninput="iframePreview()" value="{{ $data->link_live }}" />
                         </div>
+                        <button type="button" class="btn btn-sm btn-primary mt-3" data-bs-target="#tutorial_link_embed"
+                            data-bs-toggle="modal">
+                            Tutorial Cara mengambil link embed video youtube
+                        </button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tutorial_link_embed" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tutorial Cara mengambil link embed video youtube</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('assets/sbadminpro/assets/img/tutorial/1.png') }}" alt="tutorial-1"
+                                class="img-fluid">
+                            <label class="fw-bold text-black mt-3 mb-3">Tekan tombol bagikan di video youtube yang ingin
+                                diambil</label>
+                        </div>
+                        <div class="col-6">
+                            <img src="{{ asset('assets/sbadminpro/assets/img/tutorial/2.png') }}" alt="tutorial-1"
+                                class="img-fluid">
+                            <label class="fw-bold text-black mt-3 mb-3">Pilih opsi sematkan/yang pertama</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('assets/sbadminpro/assets/img/tutorial/3.png') }}" alt="tutorial-1"
+                                class="img-fluid">
+                            <label class="fw-bold text-black mt-3 mb-3">Copy semua teks tersebut</label>
+                        </div>
+                        <div class="col-6">
+                            <img src="{{ asset('assets/sbadminpro/assets/img/tutorial/4.png') }}" alt="tutorial-1"
+                                class="img-fluid">
+                            <label class="fw-bold text-black mt-3 mb-3">Paste teks yang telah di copy ke editor teks apa
+                                saja lalu
+                                copy
+                                link
+                                youtube embednya
+                                saja yang tertera pada di gambar</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('assets/sbadminpro/assets/img/tutorial/5.png') }}" alt="tutorial-1"
+                                class="img-fluid">
+                            <label class="fw-bold text-black mt-3 mb-3">Paste pada input lalu simpan Done 👍</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                        data-bs-dismiss="modal">Tutup</button></div>
             </div>
         </div>
     </div>

@@ -93,3 +93,9 @@ p {
     word-wrap: break-word;
     max-width: 100%;
 }
+
+.line {
+    background-color: black;
+    width: 10%;
+    padding-bottom: 5px;
+}

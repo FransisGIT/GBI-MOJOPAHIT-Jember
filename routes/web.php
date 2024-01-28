@@ -31,6 +31,7 @@ Route::get('/', [landingController::class, 'halamanHome'])->name('halamanHome');
 Route::get('/persembahan', [landingController::class, 'halamanPersembahan'])->name('halamanPersembahan');
 
 Route::get('/renungan', [landingController::class, 'halamanRenungan'])->name('halamanRenungan');
+Route::get('/daftar-renungan/{id}', [landingController::class, 'daftarRenungan'])->name('daftarRenungan');
 
 Route::get('/kontak', [landingController::class, 'halamanKontak'])->name('halamanKontak');
 
