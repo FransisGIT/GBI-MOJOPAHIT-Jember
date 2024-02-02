@@ -46,10 +46,19 @@ class landingController extends Controller
         return view('landing.persembahan', compact('dataPersembahan'));
     }
 
-    public function halamanRenungan()
+    public function halamanRenungan(Request $request)
     {
-        $dataRenungan =  renungan::latest()->paginate(21);
-        return view('landing.renungan', compact('dataRenungan'));
+        $searchQuery = $request->input('searchQuery');
+
+        $query = renungan::query();
+        if ($searchQuery) {
+            $query->where('judul_renungan', 'like', '%' . $searchQuery . '%')
+                ->orWhere('renungan_ke', 'like', '%' . $searchQuery . '%')
+                ->orWhere('dibuat', 'like', '%' . $searchQuery . '%');
+        }
+
+        $dataRenungan =  $query->latest()->paginate(9);
+        return view('landing.renungan', compact('dataRenungan', 'searchQuery'));
     }
 
     public function daftarRenungan(Request $request, $id)

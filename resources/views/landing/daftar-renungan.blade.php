@@ -1,5 +1,5 @@
 @extends('landing')
-@section('title', $data->judul_renungan . ' GBI MOJOPAHIT')
+@section('title', $data->judul_renungan . ' | GBI MOJOPAHIT')
 @section('content')
     <section class="hero-section position-relative" id="section_1">
         <div class="overlay_renungan"></div>

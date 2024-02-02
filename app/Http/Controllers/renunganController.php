@@ -23,10 +23,8 @@ class renunganController extends Controller
                 ->orWhere('dibuat', 'like', '%' . $searchQuery . '%');
         }
 
-        // Ambil data terbaru dan terapkan paginasi
         $data = $query->latest()->paginate(9);
 
-        // Ambil total jumlah renungan (jika tidak melakukan pencarian)
         $countRenungan = $searchQuery ? $data->total() : renungan::count();
 
         return view('admin.renungan', compact('data', 'countRenungan', 'searchQuery'));
