@@ -58,10 +58,12 @@
                         <div class="col-lg-4 mb-4 d-flex justify-content-center flex-wrap">
                             <div class="card lift w-100">
                                 <figure>
-                                    <a href="javascript:void(0)" class="no-pointer">
-                                        <img class="card-img-top" src="{{ asset('/storage/' . $d->gambar) }}"
-                                            alt="gambar">
-                                    </a>
+                                    <div class="hover-black">
+                                        <a href="javascript:void(0)" class="no-pointer">
+                                            <img class="card-img-top" src="{{ asset('/storage/' . $d->gambar) }}"
+                                                alt="gambar">
+                                        </a>
+                                    </div>
                                 </figure>
                                 <div class="card-body">
                                     <a href="/kelola-renungan/{{ $d->id }}/edit" class="text-decoration-none">

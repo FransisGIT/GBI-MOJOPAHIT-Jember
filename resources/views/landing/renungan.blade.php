@@ -16,12 +16,14 @@
                 @foreach ($dataRenungan as $d)
                     <div class="col d-flex justify-content-center mt-5">
                         <div class="card border-0" style="width: 18rem;">
-                            <a href="/daftar-renungan/{{ $d->id }}" class="text-decoration-none">
-                                <figure>
-                                    <img src="{{ asset('/storage/' . $d->gambar) }}" class="card-img-top aspect"
-                                        alt="gambar">
-                                </figure>
-                            </a>
+                            <figure>
+                                <a href="/daftar-renungan/{{ $d->id }}" class="text-decoration-none">
+                                    <div class="hover-black">
+                                        <img src="{{ asset('/storage/' . $d->gambar) }}" class="card-img-top aspect"
+                                            alt="gambar">
+                                    </div>
+                                </a>
+                            </figure>
                             <div class="card-body text-start">
                                 <a href="/daftar-renungan/{{ $d->id }}" class="text-decoration-none">
                                     <h6 class="card-title text-black fs-4">{{ $d->judul_renungan }}</h6>
