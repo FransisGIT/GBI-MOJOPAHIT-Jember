@@ -26,9 +26,9 @@ Sebuah website gbi mojopahit jember
 * Git Bash
 
 ## Installation
-- Clone repo: `git clone https://github.com/muhamdaily/ppdb-smk.git`
+- Clone repo: `git clone https://github.com/fransisgit/gbi-mojopahit-jember.git`
 - Run `cd gbi-mojopahit-jember`
-- Update dependencies `composer update`
+- install composer `composer install`
 - Done
 
 ## Configuration
