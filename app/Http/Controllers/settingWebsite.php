@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cabang_gereja;
 use App\Models\setting_website;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class cabanggerejaController extends Controller
+class settingWebsite extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = cabang_gereja::all();
         $dataWebsite = setting_website::firstOrFail();
-        return view('admin.cabang-gereja', compact('data', 'dataWebsite'));
+        return view('superadmin.setting-website', compact('dataWebsite'));
     }
 
     /**
@@ -32,11 +29,7 @@ class cabanggerejaController extends Controller
      */
     public function store(Request $request)
     {
-        cabang_gereja::create([
-            'cabang' => $request->cabang,
-            'link_cabang' => $request->link_cabang,
-        ]);
-        return back()->withToastSuccess('Data berhasil disimpan!');
+        //
     }
 
     /**
@@ -60,9 +53,7 @@ class cabanggerejaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $dataUpdate = cabang_gereja::find($id);
-        $dataUpdate->update($request->all());
-        return back()->withToastSuccess('Data berhasil disimpan!');
+        //
     }
 
     /**
@@ -70,9 +61,6 @@ class cabanggerejaController extends Controller
      */
     public function destroy(string $id)
     {
-        $data = cabang_gereja::find($id);
-        $data->delete();
-
-        return back()->withToastSuccess('Data berhasil dihapus!');
+        //
     }
 }

@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\visi_misi::create([
             'visi' => 'Menjadi Gereja yang Memenuhi Perintah Agung dan Amanat Agung untuk Pergi dan Menjadikan Semua Bangsa Menjadi Murid Kristus',
-            'misi' => 'Perjumpaan dengan Allah, Mengalami Kemerdekaan, Menemukan Tujuan Allah, & Mengemban Amanat Agung'
+            'misi' => 'Perjumpaan dengan Allah, Mengalami Kemerdekaan, Menemukan Tujuan Allah, & Mengemban Amanat Agung',
         ]);
 
         \App\Models\persembahan::create([
@@ -54,6 +54,14 @@ class DatabaseSeeder extends Seeder
             'facebook' => 'https://web.facebook.com/profile.php?id=100057167521658',
             'tiktok' => 'https://vt.tiktok.com/ZSJcRff7N/',
             'telepon' => '0331-421724',
+        ]);
+        \App\Models\setting_website::create([
+            'gambar' => 'default.png',
+            'url' => 'https://alamat-website.com',
+            'keyword' => 'gbimojopahit gbi, gbi jember, gereja jember, gbi mojopahit jember',
+            'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, distinctio quas commodi, unde pariatur quaerat, sunt tempore earum expedita libero deleniti! Sed rem porro sunt nesciunt in vel, non harum!',
+            'title' => 'GBI MOJOPAHIT',
+            'author' => 'GBI Mojopahit Jember',
         ]);
     }
 }

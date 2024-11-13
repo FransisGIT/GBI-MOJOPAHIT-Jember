@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\setting_website;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -14,7 +15,8 @@ class kelolauserController extends Controller
     public function index()
     {
         $data = User::all();
-        return view('superadmin.kelola-user', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('superadmin.kelola-user', compact('data', 'dataWebsite'));
     }
 
     /**

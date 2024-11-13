@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'GBI MOJOPAHIT | Banner & Livestream')
+@section('title', 'Banner & Livestream')
 
 @section('content')
     @include('sweetalert::alert')
@@ -48,7 +48,7 @@
                             <span class="input-group-text"><i data-feather="image"></i></span>
                             <input class="form-control ps-0" type="file" placeholder="Input group prepend..."
                                 aria-label="banner-image" name="banner[]" id="file-input" oninput="bannerPreview()" />
-                            <label class="text-black-50">Support PNG,JPG,MP4,GIF</label>
+                            <!-- <label class="text-black-50">Support PNG,JPG,MP4,GIF</label> -->
                         </div>
 
                         <div class="d-flex justify-content-center">

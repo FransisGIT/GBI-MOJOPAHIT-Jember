@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'GBI MOJOPAHIT | Our Generation')
+@section('title', 'Our Generation')
 
 @section('content')
     @include('sweetalert::alert')

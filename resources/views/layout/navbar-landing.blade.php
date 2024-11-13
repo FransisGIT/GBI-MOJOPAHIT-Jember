@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link  {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+                            <a class="nav-link  {{ Request::is('/') ? 'active' : '' }}" href="/">Beranda</a>
                         </li>
 
 

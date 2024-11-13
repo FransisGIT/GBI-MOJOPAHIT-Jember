@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\setting_website;
 use App\Models\sosmed_kontak;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class sosmedkontakController extends Controller
     public function index()
     {
         $data = sosmed_kontak::all()->first();
-        return view('admin.sosmed-kontak', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.sosmed-kontak', compact('data', 'dataWebsite'));
     }
 
     /**

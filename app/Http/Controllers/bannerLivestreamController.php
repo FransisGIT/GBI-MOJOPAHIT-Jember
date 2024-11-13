@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\banner_depan_live;
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -11,7 +12,8 @@ class bannerLivestreamController extends Controller
     function index()
     {
         $data = banner_depan_live::all()->first();
-        return view('admin.banner-livestream', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.banner-livestream', compact('dataWebsite', 'data'));
     }
 
     function simpanBannerLive(Request $request, $id)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use toast;
@@ -11,7 +12,8 @@ class authController extends Controller
 {
     public function halamanLogin()
     {
-        return view('auth.halamanLogin');
+        $data = setting_website::firstOrFail();
+        return view('auth.halamanLogin', compact('data'));
     }
 
     public function fungsiLogin(Request $request)

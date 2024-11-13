@@ -8,6 +8,7 @@ use App\Models\our_generation;
 use App\Models\panel_about;
 use App\Models\persembahan;
 use App\Models\renungan;
+use App\Models\setting_website;
 use App\Models\sosmed_kontak;
 use App\Models\tim_penggembala;
 use App\Models\visi_misi;
@@ -19,12 +20,15 @@ use ParsedownExtra;
 class landingController extends Controller
 {
     protected $dataSosmedKontak;
+    protected $dataWebsite;
 
     public function __construct()
     {
 
         $this->dataSosmedKontak = sosmed_kontak::all()->first();
+        $this->dataWebsite = setting_website::firstOrFail();
         View::share('dataSosmedKontak', $this->dataSosmedKontak);
+        View::share('dataWebsite', $this->dataWebsite);
     }
     public function halamanHome()
     {

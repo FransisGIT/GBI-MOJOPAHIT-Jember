@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\persembahan;
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -14,7 +15,8 @@ class persembahanController extends Controller
     public function index()
     {
         $data = persembahan::all()->first();
-        return view('admin.persembahan', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.persembahan', compact('data', 'dataWebsite'));
     }
 
     /**

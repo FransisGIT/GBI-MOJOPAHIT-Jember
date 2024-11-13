@@ -10,6 +10,7 @@ use App\Http\Controllers\ourgenerationController;
 use App\Http\Controllers\panelaboutController;
 use App\Http\Controllers\persembahanController;
 use App\Http\Controllers\renunganController;
+use App\Http\Controllers\settingWebsite;
 use App\Http\Controllers\sosmedkontakController;
 use App\Http\Controllers\timPenggembala;
 use App\Http\Controllers\visimisiController;
@@ -75,5 +76,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['superadmin'])->group(function () {
         Route::resource('kelola-user', kelolauserController::class);
+        Route::resource('setting-website', settingWebsite::class);
     });
 });

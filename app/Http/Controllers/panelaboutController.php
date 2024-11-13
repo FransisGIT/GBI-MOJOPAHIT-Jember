@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\panel_about;
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 
 class panelaboutController extends Controller
@@ -13,7 +14,8 @@ class panelaboutController extends Controller
     public function index()
     {
         $data = panel_about::all()->first();
-        return view('admin.panel-about', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.panel-about', compact('data', 'dataWebsite'));
     }
 
     /**

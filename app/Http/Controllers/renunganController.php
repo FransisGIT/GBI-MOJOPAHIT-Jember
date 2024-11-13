@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\renungan;
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
@@ -14,6 +15,7 @@ class renunganController extends Controller
      */
     public function index(Request $request)
     {
+        $dataWebsite = setting_website::firstOrFail();
         $searchQuery = $request->input('searchQuery');
 
         $query = renungan::query();
@@ -26,8 +28,7 @@ class renunganController extends Controller
         $data = $query->latest()->paginate(9);
 
         $countRenungan = $searchQuery ? $data->total() : renungan::count();
-
-        return view('admin.renungan', compact('data', 'countRenungan', 'searchQuery'));
+        return view('admin.renungan', compact('data', 'countRenungan', 'searchQuery', 'dataWebsite'));
     }
 
 

@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'GBI MOJOPAHIT | Beranda')
+@section('title', 'Beranda')
 @section('content')
     @include('sweetalert::alert')
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">

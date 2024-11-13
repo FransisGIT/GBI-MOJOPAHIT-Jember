@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\setting_website;
 use App\Models\tim_penggembala;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -15,8 +16,8 @@ class timPenggembala extends Controller
     {
         $data = tim_penggembala::all();
         $penggembala_count = tim_penggembala::count();
-
-        return view('admin.tim-penggembala', compact('data', 'penggembala_count'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.tim-penggembala', compact('data', 'penggembala_count', 'dataWebsite'));
     }
 
     /**

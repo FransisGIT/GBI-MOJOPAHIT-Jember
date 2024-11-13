@@ -3,7 +3,7 @@
         <div class="sidenav-menu">
             <div class="nav accordion" id="accordionSidenav">
                 <!-- Sidenav Menu Heading (Core)-->
-                <div class="sidenav-menu-heading">Core</div>
+                <div class="sidenav-menu-heading">Fitur Website</div>
                 <!-- Sidenav Accordion (Dashboard)-->
                 <a class="nav-link {{ Request::is('beranda') ? 'active' : '' }}" href="/beranda">
                     <div class="nav-link-icon">
@@ -20,6 +20,12 @@
                             <i class="fa-solid fa-user fs-5"></i>
                         </div>
                         Kelola User
+                    </a>
+                    <a class="nav-link {{ Request::is('setting-website') ? 'active' : '' }}" href="/setting-website">
+                        <div class="nav-link-icon">
+                            <i class="fa-solid fa-user fs-5"></i>
+                        </div>
+                        Setting Website
                     </a>
                 @endif
 

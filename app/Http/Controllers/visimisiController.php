@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\setting_website;
 use App\Models\visi_misi;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class visimisiController extends Controller
     public function index()
     {
         $data = visi_misi::all()->first();
-        return view('admin.visi-misi', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.visi-misi', compact('data', 'dataWebsite'));
     }
 
     /**
@@ -27,9 +29,7 @@ class visimisiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.

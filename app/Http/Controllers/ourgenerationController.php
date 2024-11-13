@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\our_generation;
+use App\Models\setting_website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -14,7 +15,8 @@ class ourgenerationController extends Controller
     public function index()
     {
         $data = our_generation::all();
-        return view('admin.our-generation', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.our-generation', compact('data', 'dataWebsite'));
     }
 
     /**
