@@ -30,8 +30,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="small text-muted mb-2 d-flex justify-content-end"><a href="/kelola-renungan/create"
-                                    class="btn btn-primary">Tambah</a>
+                            <div class="small text-muted mb-2 d-flex justify-content-end">
+                                <a href="/kelola-renungan/create" class="btn btn-primary">Tambah</a>
                             </div>
                         </div>
                     </div>

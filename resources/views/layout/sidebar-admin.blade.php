@@ -3,9 +3,8 @@
         <div class="sidenav-menu">
             <div class="nav accordion" id="accordionSidenav">
                 <!-- Sidenav Menu Heading (Core)-->
-                <div class="sidenav-menu-heading">Fitur Website</div>
                 <!-- Sidenav Accordion (Dashboard)-->
-                <a class="nav-link {{ Request::is('beranda') ? 'active' : '' }}" href="/beranda">
+                <a class="nav-link pt-5 {{ Request::is('beranda') ? 'active' : '' }}" href="/beranda">
                     <div class="nav-link-icon">
                         <i data-feather="grid" class="fs-5"></i>
                     </div>
@@ -23,7 +22,7 @@
                     </a>
                     <a class="nav-link {{ Request::is('setting-website') ? 'active' : '' }}" href="/setting-website">
                         <div class="nav-link-icon">
-                            <i class="fa-solid fa-user fs-5"></i>
+                            <i class="fa-solid fa-cog fs-5"></i>
                         </div>
                         Setting Website
                     </a>

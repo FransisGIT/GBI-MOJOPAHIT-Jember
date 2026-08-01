@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('layout.meta')
+    @include('layout.metadata')
     @include('links.style-landing')
     <title>{{ $dataWebsite->title }}</title>
 </head>

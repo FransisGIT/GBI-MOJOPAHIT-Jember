@@ -1,3 +1,7 @@
+body{
+
+}
+
 @media (max-width: 599px) {
     .content-center {
         display: flex;

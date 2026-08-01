@@ -15,4 +15,4 @@
 <link rel="stylesheet" href="{{ asset('assets/sbadminpro/css/flatpicker.css') }}">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/festive/images/logo/logo_gbijember.png') }}" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ $dataWebsite->gambar == 'logo_gbijember.png' || !$dataWebsite->gambar ? asset('assets/festive/images/logo/logo_gbijember.png') : asset('storage/' . $dataWebsite->gambar) }}"/>

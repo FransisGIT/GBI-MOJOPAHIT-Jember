@@ -26,7 +26,7 @@ class landingController extends Controller
     {
 
         $this->dataSosmedKontak = sosmed_kontak::all()->first();
-        $this->dataWebsite = setting_website::firstOrFail();
+        $this->dataWebsite = setting_website::all()->first();
         View::share('dataSosmedKontak', $this->dataSosmedKontak);
         View::share('dataWebsite', $this->dataWebsite);
     }

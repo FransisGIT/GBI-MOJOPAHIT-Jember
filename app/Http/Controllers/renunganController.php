@@ -37,7 +37,8 @@ class renunganController extends Controller
      */
     public function create()
     {
-        return view('admin.renungan-tambah');
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.renungan-tambah', compact('dataWebsite'));
     }
 
     /**
@@ -89,7 +90,8 @@ class renunganController extends Controller
     public function edit(string $id)
     {
         $data = renungan::find($id);
-        return view('admin.renungan-edit', compact('data'));
+        $dataWebsite = setting_website::firstOrFail();
+        return view('admin.renungan-edit', compact('data', 'dataWebsite'));
     }
 
     /**

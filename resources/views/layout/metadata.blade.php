@@ -24,7 +24,3 @@
 <meta property="twitter:title" content="{{ $dataWebsite->title }}" />
 <meta property="twitter:description" content="{{ $dataWebsite->deskripsi }}" />
 <meta property="twitter:image" content="{{ $dataWebsite->gambar }}" />
-
-<!-- ======== Page title ============ -->
-<!--<< Favcion >>-->
-<link rel="shortcut icon" href="{{ asset('/storage/images/'. $dataWebsite->gambar) }}">

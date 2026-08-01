@@ -9,7 +9,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="activity"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-user fs-1"></i></div>
                             Kelola User
                         </h1>
                     </div>
@@ -95,42 +95,4 @@
             </div>
         </div>
     @endforeach
-
-    {{-- @push('script')
-        <script>
-            function tambahPreview() {
-                const input = document.getElementById('file-input');
-                const previewPhoto = () => {
-                    const file = input.files;
-                    if (file) {
-                        const fileReader = new FileReader();
-                        const preview = document.getElementById('file-preview');
-                        fileReader.onload = function(event) {
-                            preview.setAttribute('src', event.target.result);
-                            document.getElementById('file-preview').classList.remove('d-none')
-                        }
-                        fileReader.readAsDataURL(file[0]);
-                    }
-                }
-                input.addEventListener("change", previewPhoto);
-            }
-
-            function editPreview() {
-                const input = document.getElementById('edit-input');
-                const previewPhoto = () => {
-                    const file = input.files;
-                    if (file) {
-                        const fileReader = new FileReader();
-                        const preview = document.getElementById('edit-preview');
-                        fileReader.onload = function(event) {
-                            preview.setAttribute('src', event.target.result);
-                            document.getElementById('edit-preview').classList.remove('d-none')
-                        }
-                        fileReader.readAsDataURL(file[0]);
-                    }
-                }
-                input.addEventListener("change", previewPhoto);
-            }
-        </script>
-    @endpush --}}
 @endsection
